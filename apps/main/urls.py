@@ -9,3 +9,7 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('lol2/', views.index, name='lol1234'),
 ]
+
+
+
+
