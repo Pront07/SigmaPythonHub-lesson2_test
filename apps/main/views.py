@@ -7,8 +7,16 @@ def index(request):
 
 
 def lolasdasdasd(request):
-    return HttpResponse('<h1>LOL</h1>')
+    return render(request, 'main/lol.html')
 
 
 def about(request):
     return render(request, 'main/about.html')
+
+
+def contacts(request):
+    return render(request, 'main/contacts.html')
+
+
+def articles(request):
+    return render(request, 'main/articles.html')
