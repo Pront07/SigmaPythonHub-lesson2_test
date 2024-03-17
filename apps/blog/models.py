@@ -1,13 +1,19 @@
+import os
+import uuid
+from PIL import Image
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Post(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Автор', related_name='posts', null=True,
+                               default=None)
     title = models.CharField(verbose_name='Заголовок', max_length=255)
     content = models.TextField(verbose_name='Контент')
     image = models.ImageField(verbose_name='Малюнок', upload_to='post_images/')
     is_published = models.BooleanField(verbose_name='Опубліковано', default=False)
-    likes = models.IntegerField(verbose_name='Вподобайки', default=0)
-    dislikes = models.IntegerField(verbose_name='Дизлайки', default=0)
+    likes = models.ManyToManyField(User, related_name='post_likes', blank=True, null=True)
+    dislikes = models.ManyToManyField(User, related_name='post_dislikes', blank=True, null=True)
     views = models.IntegerField(verbose_name='Перегляди', default=0)
     created_at = models.DateTimeField(verbose_name='Дата створення', auto_now_add=True)
     updated_at = models.DateTimeField(verbose_name='Дата оновлення', auto_now=True)
@@ -18,14 +24,16 @@ class Post(models.Model):
     class Meta:
         verbose_name = 'Пост'
         verbose_name_plural = 'Пости'
-
         ordering = ['-created_at']
 
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, verbose_name='Пост', related_name='comments')
-    author = models.CharField(verbose_name='Автор', max_length=50)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Автор', related_name='comments', null=True,
+                               default=None)
     content = models.TextField(verbose_name='Контент')
+    likes = models.ManyToManyField(User, related_name='comment_likes', blank=True)
+    dislikes = models.ManyToManyField(User, related_name='comment_dislikes', blank=True)
     created_at = models.DateTimeField(verbose_name='Дата створення', auto_now_add=True)
     updated_at = models.DateTimeField(verbose_name='Дата оновлення', auto_now=True)
 
