@@ -76,7 +76,7 @@
                 <form id="postForm" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                     {{ create_form.as_p }}
-                <img id="cropperImage" src="#" alt="Обрізане зображення" style="max-height: 200px">
+                <img id="cropperImage" src="#" alt="Обрізане зображення" style="max-height: 200">
                 <button type="submit" class="btn btn-primary">Відправити</button>
             </form>
                 <!-- {% csrf_token %}
