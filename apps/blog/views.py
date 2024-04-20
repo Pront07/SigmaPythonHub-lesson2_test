@@ -10,6 +10,25 @@ from django.db.models import Q
 # send email
 from django.core.mail import send_mail
 
+def profile(request, username):
+    user = get_object_or_404(User, username=username)
+    # Додайте код для відображення профілю користувача тут
+
+def search(request):
+    query = request.GET.get('q')
+    if query:
+        posts = Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query), is_published=True)
+    else:
+        posts = Post.objects.filter(is_published=True)
+    paginator = Paginator(posts, 3)
+
+    context = {
+        'posts': paginator.get_page(request.GET.get('page')),
+        'query': query,
+    }
+
+    return render(request, 'blog/search_results.html', context)
+
 
 def index(request):
     query = request.GET.get('q')

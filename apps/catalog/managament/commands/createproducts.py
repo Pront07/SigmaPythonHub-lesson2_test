@@ -5,6 +5,7 @@ from faker import Faker
 
 from apps.catalog.models import Catalog, Product, Image
 
+
 class Command(BaseCommand):
     help = 'Create products -c <count> -lang <language>'
 

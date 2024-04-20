@@ -134,7 +134,7 @@
                             <div class="d-flex align-items-left">
                                 <img src="{{follower.profile.get_avatar}}" class="rounded-circle" alt="..."
                                      style="width: 30px; height: 30px;">
-                                <a href="{% url 'members:profile' follower.user.username %}"
+                                <a href="{% url 'members:profile' follower.username %}"
                                    class="text-decoration-none text-primary hover-underline">
                                     <small class="ms-3">@{{ follower.username }}</small>
                                 </a>
