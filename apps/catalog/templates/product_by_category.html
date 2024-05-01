@@ -34,6 +34,8 @@
                 </form>
             {% if object_list.qs  %}
 
+            <p>Кількість товарів: {{ object_list.qs|length }}</p>
+
                 <div class='row mt-4'>
                     {% for product in object_list.qs %}
                         <div class='col-4'>

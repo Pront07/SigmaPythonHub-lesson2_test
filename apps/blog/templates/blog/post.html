@@ -25,7 +25,6 @@
             <h5>Коментарі</h5>
             🗨️ {{post.comments.count}}
             <hr class="mx-2">
-            {{post.comments.all}}
             <form action="{% url 'blog:comment' post.id %}" method="post">
                 {% csrf_token %}
                 <div class="mb-3">

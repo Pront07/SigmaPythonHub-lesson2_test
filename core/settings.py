@@ -46,12 +46,14 @@ INSTALLED_APPS = [
     'imagekit',
     'debug_toolbar',
     'django_filters',
+    'rest_framework',
 
     'apps.blog',
     'apps.main',
     'apps.members',
     'apps.catalog',
     'apps.order',
+    'apps.notifications',
 ]
 
 MIDDLEWARE = [

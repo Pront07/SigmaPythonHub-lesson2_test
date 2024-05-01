@@ -38,3 +38,4 @@ del intern1
 new_intern = NewIntern()
 new_intern.getdata()
 new_intern.show_info()
+
