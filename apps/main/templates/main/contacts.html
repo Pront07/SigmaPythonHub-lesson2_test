@@ -2,10 +2,68 @@
 
 {% block title %}Contacts{% endblock %}
 
-
-
 {% block content %}
 
-        <h1>Ти вже в контактах</h1>
+<style>
+    /* Стилі для контенту */
+    .content-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        background-color: transparent; /* Прозорий фон */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
 
+    /* Стилі для заголовку */
+    h1 {
+        font-family: 'Arial', sans-serif;
+        font-size: 28px;
+        color: #333;
+        text-align: center;
+        border-bottom: 2px solid #ccc;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    /* Стилі для іконок соціальних мереж */
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .social-icons img {
+        width: 40px;
+        height: 40px;
+        margin: 0 10px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .social-icons img:hover {
+        transform: scale(1.1);
+    }
+</style>
+
+
+<div class="content-container">
+    <h1>Зв'язок з нами:</h1>
+    <p>Телефон: +380 93 421 43 21</p>
+    <p>Електронна пошта: info@kozmychshop.com</p>
+
+    <div class="social-icons">
+        <img src="https://static.vecteezy.com/system/resources/previews/018/930/476/non_2x/facebook-logo-facebook-icon-transparent-free-png.png" alt="Facebook">
+        <img src="https://cdn-icons-png.flaticon.com/512/3621/3621435.png" alt="Instagram">
+        <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/91/ef/67/91ef67ae-4877-1286-a4d6-fb04f6f37e9e/ProductionAppIcon-2x-4-0-0-85-220.png/1200x630bb.png" alt="Twitter">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Telegram_Messenger.png" alt="Telegram">
+    </div>
+
+    <p>Ми працюємо з понеділка по п'ятницю з 9:00 до 18:00.</p>
+    <p>Безкоштовна доставка по всій Україні новою поштою!</p>
+
+    <p>Адреса магазину:<br>м. Чернівці, вул. Героїв Майдану 27Б</p>
+
+    <p>Не соромтеся зв'язатися з нами з будь-якими питаннями чи пропозиціями.</p>
+</div>
 {% endblock %}

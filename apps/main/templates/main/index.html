@@ -2,15 +2,90 @@
 
 {% block title %}Home{% endblock %}
 
-
-
 {% block content %}
+<style>
+    /* Додані стилі */
+    .mission-section {
+        background-color: #f8f9fa;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    }
 
-        <h1>Hello, world!</h1>
-        <p>My first Bootstrap page.</p>
-        <div class="mt-4 rounded-3 bg-body-tertiary p-4">
-          <h3>А Зум вже не запустився</h3>
-          <p>Бонуса немає </p>
-          <p>Що робити?</p>
+    .mission-section h2 {
+        color: #007bff;
+    }
+
+    .mission-section p {
+        color: #6c757d;
+    }
+
+    .values-section {
+        background-color: #f8f9fa;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .values-section h2 {
+        color: #007bff;
+    }
+
+    .values-section p {
+        color: #6c757d;
+    }
+
+    .welcome-message {
+        font-size: 24px;
+        font-weight: bold;
+        color: #343a40;
+    }
+
+    .signature {
+        font-style: italic;
+        color: #6c757d;
+    }
+
+    /* Анімації */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animated {
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        animation-name: fadeInUp;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="text-center">
+                <h1 class="display-4 animated">Ласкаво просимо до KozmychShop</h1>
+                <p class="lead animated">Ваше віконечко у світ європейської краси та витонченості!</p>
+            </div>
+            <div class="mt-5 rounded bg-light p-4 text-dark mission-section animated">
+                <h2 class="text-center">Наша місія</h2>
+                <p class="text-center">Ми віддані принести частинку Європи прямо до ваших дверей, даруючи вам можливість насолодитися неперевершеним стилем та неповторною естетикою цього чудового континенту.</p>
+            </div>
+            <div class="mt-5 rounded bg-light p-4 text-dark values-section animated">
+                <h2 class="text-center">Наші цінності</h2>
+                <p class="text-center">Нехай ваше життя наповниться ароматом французької лаванди, вишуканістю італійського стилю та теплом іспанського сонця завдяки нашим товаром.</p>
+            </div>
+            <div class="text-center mt-5">
+                <p class="lead welcome-message animated">Поглибіться у світ європейського шарму разом з KozmychShop - де кожен предмет - це маленький шедевр, а кожен покупець - це частина нашої родини. Вітаємо вас у нашому дивовижному світі!</p>
+                <p class="signature animated">З повагою,<br>магазин KozmychShop</p>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
